@@ -282,7 +282,7 @@ const Experience = props => {
             <TechSpan>Gatsby.js</TechSpan>
             <TechSpan>Recoil</TechSpan>
             <TechSpan>Mobx</TechSpan>
-            <TechSpan>GrapghQL(Apollo-client)</TechSpan>
+            <TechSpan>GraphQL(Apollo-client)</TechSpan>
             <TechSpan>RethinkDB(NoSQL)</TechSpan>
             <TechSpan>Figma</TechSpan>
             <TechSpan>Storybook</TechSpan>
