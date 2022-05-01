@@ -295,10 +295,10 @@ const Experience = props => {
           <Miscellaneous>이화여자대학교<br />(교육학 학사, 경영학 부전공)<br />GPA: 4.13 / 4.5 <br />2009. 3. ~ 2014. 2.</Miscellaneous>
           <Miscellaneous>상산고등학교 (인문계열) <br />2006. 3. ~ 2009. 2.</Miscellaneous>
         </AsideDiv>
-        <AsideDiv>
+        {/* <AsideDiv>
           <Title>Etc.</Title>
-          <Miscellaneous>42Seoul 강연</Miscellaneous>
-        </AsideDiv>
+          <Miscellaneous>애플 팟캐스트 '어느 프론트엔드 개발자 성장기' 운영 중</Miscellaneous>
+        </AsideDiv> */}
       </Aside>
 
 
