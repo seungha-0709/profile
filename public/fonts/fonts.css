@@ -42,74 +42,54 @@
   font-family: 'Monaco';
   font-display: block;
   src: local('Monaco'),
-    url('/fonts/monaco.ttf') format('ttf');
+    url('/fonts/monaco.ttf') format('ttf'),
 }
 
 @font-face {
   font-family: 'Averta Std PE';
   font-weight: 900;
   font-display: block;
-  src: local('Averta Std PE'), url('/fonts/AvertaStdPE-Black.otf') format('opentype');
+  src: local('Averta Std PE'), url('/fonts/AvertaStd-Black.otf') format('opentype'),
 }
 
 @font-face {
   font-family: 'Averta Std PE';
   font-weight: 800;
   font-display: block;
-  src: local('Averta Std PE'), url('/fonts/AvertaStdPE-Extrabold.otf') format('opentype');
+  src: local('Averta Std PE'), url('/fonts/AvertaStd-Extrabold.otf') format('opentype'),
 }
 
 @font-face {
   font-family: 'Averta Std PE';
   font-weight: 700;
   font-display: block;
-  src: local('Averta Std PE'), url('/fonts/AvertaStdPE-Bold.otf') format('opentype');
+  src: local('Averta Std PE'), url('/fonts/AvertaStd-Bold.otf') format('opentype'),
 }
 
 @font-face {
   font-family: 'Averta Std PE';
   font-weight: 600;
   font-display: block;
-  src: local('Averta Std PE'), url('/fonts/AvertaStdPE-Semibold.otf') format('opentype');
+  src: local('Averta Std PE'), url('/fonts/AvertaStd-Semibold.otf') format('opentype'),
 }
 
 @font-face {
   font-family: 'Averta Std PE';
   font-weight: 500;
   font-display: block;
-  src: local('Averta Std PE'), url('/fonts/AvertaStdPE-Regular.otf') format('opentype');
+  src: local('Averta Std PE'), url('/fonts/avertastdregular.otf') format('opentype'),
 }
 
 @font-face {
   font-family: 'Averta Std PE';
   font-weight: 400;
   font-display: block;
-  src: local('Averta Std PE'), url('/fonts/AvertaStdPE-Light.otf') format('opentype');
+  src: local('Averta Std PE'), url('/fonts/AvertaStd-Light.otf') format('opentype'),
 }
 
 @font-face {
   font-family: 'Averta Std PE';
   font-weight: 300;
   font-display: block;
-  src: local('Averta Std PE'), url('/fonts/AvertaStdPE-Thin.otf') format('opentype');
-}
-
-
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-size: 14px;
-  font-family: Spoqa Han Sans, Averta Std PE, Monaco, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+  src: local('Averta Std PE'), url('/fonts/AvertaStd-Thin.otf') format('opentype'),
 }
