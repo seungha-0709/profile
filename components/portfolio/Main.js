@@ -2,6 +2,9 @@ import { useState, useEffect } from "react"
 import styled from "styled-components"
 import Button from "./Button"
 import { useRouter } from "next/router"
+import GitHubIcon from '@mui/icons-material/GitHub';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Container = styled.div`
   width: 100%;
@@ -137,6 +140,48 @@ const Objective = styled.div.attrs(props => ({
     }
 `
 
+const Qualification = styled.div.attrs(props => ({
+}))`
+  grid-column: 2 /span 8;
+  grid-row: 2 / span 2;
+  color: #999;
+  font-weight: 300;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  opacity:  ${props => props.section === 1 ? 0 : 1};
+  animation: ${props => props.section === 1 ? '500ms ease-in forwards 0.3s qualification' : 'none'};
+  @keyframes qualification {
+    from {
+      opacity: 0;
+      transform: translateY(20px)
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0)
+    }
+  }
+  @keyframes objectiveend {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+      
+    }
+    to {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      margin-bottom: 20px;
+      padding: 0;
+    }
+  }
+`
+
 const SlideNav = styled.nav`
   width: 100%;
   height: 100%;
@@ -252,7 +297,7 @@ const SubTitle1 = styled.h1.attrs(props => ({
   grid-column: 2 / span 8;
   grid-row: 3 / span 1;
   color: #fff;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 700;
   margin: 0;
   line-height: 3rem;
@@ -484,10 +529,17 @@ const TechSkill = styled.div.attrs(props => ({
 const WorkSummary = styled.div.attrs(props => ({
 }))`
   color: #fff;
-  grid-column: 5 / span 7;
-  grid-row: 3 / span 5;
+  padding: 0 40px 0 20px;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.5;
+  grid-column: 5 / span 6;
+  grid-row: 3 / span 4;
+  overflow-y: scroll;
   position: relative;
   z-index: 10;
+  padding-bottom: 100px;
   opacity:  ${props => props.section === 2 ? 0 : 1};
   animation: ${props => props.section === 2 ? '1000ms ease-in forwards 0.8s worksummary' : 'none'};
   @keyframes worksummary {
@@ -499,6 +551,199 @@ const WorkSummary = styled.div.attrs(props => ({
       opacity: 1;
       transform: translateY(0)
     }
+  }
+  ul {
+    font-weight: 500;
+  }
+  ol {
+    list-style: circle;
+    font-weight: 300;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #D12386;
+    border-radius: 10px;
+    background-clip: padding-box;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #aaa;
+    border-radius: 10px;
+  }
+`
+
+const WorkSummaryBg = styled.div.attrs(props => ({
+}))`
+  grid-column: 5 / span 6;
+  grid-row: 3 / span 4;
+  z-index: 10;
+  align-self: flex-end;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background-image: linear-gradient(to top, rgba(17,17,17,1), rgba(17,17,17,0));
+`
+
+const SubTitle3 = styled.h2.attrs(props => ({
+}))`
+  display: ${props => props.section !== 3 ? 'none' : 'block'};
+  grid-column: 2 / span 10;
+  grid-row: 2 / span 1;
+  color: #fff;
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 3rem;
+  letter-spacing: 0.2rem;
+  align-self: center;
+  opacity:  ${props => props.section === 3 ? 0 : 1};
+  em {
+    font-style: normal;
+    color: #D12386;
+  }
+  animation: ${props => props.section === 3 ? '500ms ease-in forwards 0.8s subtitle3' : 'none'};
+  @keyframes subtitle3 {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0)
+    }
+  }
+  @keyframes subtitle3end {
+    from {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(20px)
+    }
+  }
+`
+const Miscellaneous = styled.div.attrs(props => ({
+}))`
+  grid-column: 2 / span 5;
+  grid-row: 3 / span 2;
+  /* display: ${props => props.section !== 1 ? 'none' : 'block'}; */
+  transition: all 1s;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  color: #f8f8f8;
+  opacity:  ${props => props.section === 3 ? 0 : 1};
+  animation: ${props => props.section === 3 ? '500ms ease-in forwards 1s miscellaneous' : '500ms ease-in forwards 1s miscellaneousend'};
+  @keyframes miscellaneous {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0)
+    }
+  }
+  @keyframes miscellaneousend {
+    from {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(20px)
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      margin-bottom: 10px;
+    }
+  }
+`
+
+const Section3 = styled.div.attrs(props => ({
+}))`
+  grid-column: 2 / span 5;
+  grid-row: 6 / span 2;
+  /* display: ${props => props.section !== 1 ? 'none' : 'block'}; */
+  transition: all 1s;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  color: #f8f8f8;
+  opacity:  ${props => props.section === 3 ? 0 : 1};
+  animation: ${props => props.section === 3 ? '500ms ease-in forwards 1s section3' : '500ms ease-in forwards 1s section3end'};
+  @keyframes section3 {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0)
+    }
+  }
+  @keyframes section3end {
+    from {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(20px)
+    }
+  }
+`
+
+const ContactNav = styled.nav`
+  grid-column: 2 / span 3;
+  grid-row: 1 / span 1;
+  width: 200px;
+  color: #fff;
+  height: 100%;
+  display:flex;
+  position: relative;
+  z-index: 1000;
+  ul {
+    justify-self: center;
+    align-self: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 20px;
+      margin: 0px;
+      padding: 0px;
+      width: 30px;
+      height: 30px;
+      border-radius: 15px;
+      box-sizing:border-box ;
+      cursor: pointer;
+      &:hover {
+        border: 0;
+        background: #D12386;
+      }
+    }
+  }
+  @media screen and (min-width: 1920px) {
+    justify-content: center;
   }
 `
 
@@ -523,6 +768,14 @@ const Main = props => {
           </ul>
         </SlideNav>
 
+        <ContactNav>
+          <ul>
+            <li onClick={() => router.push('https://github.com/seungha-0709')}><GitHubIcon /></li>
+            <li><AlternateEmailIcon /></li>
+            <li><LinkedInIcon /></li>
+          </ul>
+        </ContactNav>
+
 
         <Side section={section}>
           <div>creative, enthusiastic</div>
@@ -536,23 +789,27 @@ const Main = props => {
         <Objective section={section}>
           An analytical, innovative, experienced web frontend developer with excellent knowledge of web application development concepts with the ability to work collaboratively with IT and non-technical members of the development team.
         </Objective>
+
         <Colorbox0 section={section} />
 
+        {section === 1 && (
+          <Qualification section={section}>
+            <ul>
+              <li>Strong work principle and integrity with the development in ERP, accounting, and finance-related areas that deal with specific amounts, believe that accuracy and meticulousness in development are absolutely essential to secure users' trust and improve the quality-of-service experience.</li>
+              <li>Continual studies and self-development expected to gain deep knowledge about the web, covering both client/backend.</li>
+            </ul>
+          </Qualification>
+        )}
         {section === 1 && <SubTitle1 section={section}><em>Technical</em> Skill</SubTitle1>}
         {section === 1 && <TechSkill section={section}>
           HTML5, CSS3, JavaScript, SCSS, React, Vue.js, Next.js, Recoil, MobX, GraphQL(Apollo-client), RethinkDB(NoSQL), Figma, Storybook
-
         </TechSkill>}
-
         {section === 1 && <SubTitle1 style={{ gridRow: '5 / span 1' }} section={section}>Professional <em>Experience</em></SubTitle1>}
         {section === 1 && <TechSkill style={{ gridRow: '6 / span 3' }} section={section}>
-
+          <img src="/logo-white.svg" alt="erpper" width="80" /><br />
           <p><strong>Software Engineer(Web Frontend Developer), Development Team</strong></p>
           <p>Currently contribute as a software engineer of the development team at Erpper Korea, a leading IT solution company. Refer to the below “Work Summary” for a detailed job description, tasks, and projects. </p>
-
-
         </TechSkill>}
-
         {section === 1 && <Colorbox1 section={section} />}
 
         {section === 2 && <Colorbox2 section={section} />}
@@ -561,22 +818,21 @@ const Main = props => {
           <h3>Erpper ERP Frontend Development</h3>
           <ul>
             <li>Headed the page development for account subject management, Jan. 2021</li>
-            <ul>
+            <ol>
               <li>Customized the react-beautiful-dnd library. </li>
               <li>Handled the development so that the order of each account subject and account group can be freely arranged by mouse drag and drop. </li>
-              <li>Go to demo</li>
-            </ul>
+            </ol>
             <li>Development of an automatic slip processing service screen for electronic tax invoices and electronic invoices, Feb. 2021</li>
             <li>Constructed spreadsheet screen through the customization of react-virtualization/ag-grid demo version library. </li>
             <li>Identified and resolved bugs and other issues related to frontend, May 2021 - Aug. 2021</li>
-            <ul>
-              <li>n pop-up and modal-centric services where data is updated through MobX, resolved the issue where updated is not reflected to other modals.  </li>
+            <ol>
+              <li>In pop-up and modal-centric services where data is updated through MobX, resolved the issue where updated is not reflected to other modals.  </li>
               <li>Limited the draggable area of pop-ups and modals inside the browser (customizing the react-draggable library) to prevent the problem of pop-ups and modals disappearing from the screen due to a user's mistake in dragging. </li>
               <li>Added and modified VAT automatic calculation function when entering purchase and sales numbers into a ledger. </li>
               <li>All other bugs related to the screen are resolved before the opening of the actual service, including input activation/disabling, CSS, and design modification under certain conditions. </li>
               <li>Removed anti-patterns and modified legacy code, such as unnecessary status values unrelated to rendering or managing props as status values from subcomponents and changed existing HOC-based React code to Hook-based. </li>
-              <li>Headed the comparison of tax invoice data and development of service screen for entering tax invoice approval number, Sept. 2021</li>
-            </ul>
+            </ol>
+            <li>Headed the comparison of tax invoice data and development of service screen for entering tax invoice approval number, Sept. 2021</li>
           </ul>
           <h3>Erpper ERP Decimal Arithmetic Improvement Project</h3>
           <ul>
@@ -593,9 +849,22 @@ const Main = props => {
             <li>Utilized CSS Grid, Flex, animation, and others for the development and publishing of Aicy company’s homepage. </li>
           </ul>
         </WorkSummary>}
+        {section === 2 && <WorkSummaryBg section={section}></WorkSummaryBg>}
 
 
         {section === 3 && <Colorbox3 section={section} />}
+        {section === 3 && <SubTitle3 section={section}>Miscellaneous <em>Work Experiences</em></SubTitle3>}
+        {section === 3 && <Miscellaneous section={section}>
+          <ul>
+            <li>Served as a key part of the TEvalueWise team, including taking charge of PR, marketing, sales, and customer service, Jul. 2019 - Feb. 2020. </li>
+            <li>Board of Audit and Inspection(Korean Government), National Level 7 Auditor, Feb. 2017 - Mar. 2019</li>
+          </ul>
+        </Miscellaneous>}
+        {section === 3 && <SubTitle3 style={{ gridRow: '5 / span 1' }} section={section}>Education</SubTitle3>}
+        {section === 3 && <Section3 style={{ gridRow: '6 / span 1' }} section={section}>
+          Ewha Womans University	<br />Mar. 2009 - Feb. 2014<br />
+          Majored in Education. Minored in Business Administration. GPA: 4.13/4.50
+        </Section3>}
 
       </Container>
     </div>
