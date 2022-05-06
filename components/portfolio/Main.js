@@ -18,6 +18,7 @@ const Container = styled.div`
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(8, 1fr);
   font-family: Averta Std PE, sans-serif;
+  overflow: hidden;
 `
 
 // const Floating = styled.div`
@@ -197,6 +198,7 @@ const SlideNav = styled.nav`
     flex-wrap: wrap;
     display: flex;
     align-items: center;
+    list-style: none;
     li {
       margin: 0px;
       padding: 0px;
