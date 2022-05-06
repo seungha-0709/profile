@@ -784,7 +784,6 @@ const Main = props => {
         <Hello section={section}><em>H</em>ello<em>.</em></Hello>
         <HelloIntro section={section}>
           I am Kim Seungha.
-          <Button style={{ marginTop: 40 }}>My Resume</Button>
         </HelloIntro>
         <Objective section={section}>
           An analytical, innovative, experienced web frontend developer with excellent knowledge of web application development concepts with the ability to work collaboratively with IT and non-technical members of the development team.
