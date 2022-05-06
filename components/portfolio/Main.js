@@ -5,6 +5,7 @@ import { useRouter } from "next/router"
 import GitHubIcon from '@mui/icons-material/GitHub';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import SouthEastIcon from '@mui/icons-material/SouthEast';
 
 const Container = styled.div`
   width: 100%;
@@ -38,17 +39,29 @@ const Hello = styled.h1.attrs(props => ({
 }))`
   font-size: 15rem;
   font-weight: 900;
-  grid-column: 7 / span 4;
+  grid-column: 7 / span 5;
   grid-row: 3 / span 2;
   color: #fff;
   margin: 0;
   align-self: flex-end;
   line-height: 14rem;
   position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 1;
   em {
     color: #D12386;
     font-style: normal;
   }
+  animation: ${props => props.section !== 0 && '1000ms ease-out forwards helloend'};
+    @keyframes helloend {
+      from {
+        width: 100%
+      }
+      to {
+        width: 0;
+      }
+    }
   &::before {
     content: '';
     width: 600px;
@@ -57,21 +70,15 @@ const Hello = styled.h1.attrs(props => ({
     position: absolute;
     top: 0;
     left: 0;
-    animation: ${props => props.section === 0 ? '1000ms ease-out forwards hello' : '1000ms ease-out forwards helloend'};
+    display: ${props => props.section !== 0 && 'none'};
+    animation: ${props => props.section === 0 && '1000ms ease-out forwards hello'};
     @keyframes hello {
       from {
         width: 100%;
       }
       to {
         width: 0px;
-      }
-    }
-    @keyframes helloend {
-      from {
-        width: 0;
-      }
-      to {
-        width: 600px;
+        display: none;
       }
     }
   }
@@ -408,8 +415,8 @@ const Colorbox1 = styled.div.attrs(props => ({
   background: #D12386;
   position: relative;
   &::before {
-    content: '';
     display: block;
+    content: '';
     z-index: 10;
     width: 100%;
     height: 100%;
@@ -417,13 +424,13 @@ const Colorbox1 = styled.div.attrs(props => ({
     top: 0;
     left: 0;
     background: #111;
-    animation: ${props => props.section === 1 ? '500ms ease-in forwards 0.2s colorbox1' : 'none'};
+    animation: ${props => props.section === 1 ? '500ms linear forwards 0.6s colorbox1' : 'none'};
     @keyframes colorbox1 {
       from {
         width: 100%;
       }
       to {
-        width: 0
+        width: 0;
       }
     }
     @keyframes colorbox1end {
@@ -761,7 +768,9 @@ const Main = props => {
   return (
     <div className="container">
       <Container>
+
         <SlideNav>
+          <SouthEastIcon style={{ color: '#D12386', fontSize: '1.5rem' }} />
           <ul>
             <li onClick={() => setSection(0)}></li>
             <li onClick={() => setSection(1)}></li>
