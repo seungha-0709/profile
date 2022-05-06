@@ -773,8 +773,8 @@ const Main = props => {
         <ContactNav>
           <ul>
             <li onClick={() => router.push('https://github.com/seungha-0709')}><GitHubIcon /></li>
-            <li><AlternateEmailIcon /></li>
-            <li><LinkedInIcon /></li>
+            <li onClick={() => router.push('mailto:sh.kim.x928@gmail.com')}><AlternateEmailIcon /></li>
+            <li onClick={() => router.push('https://www.linkedin.com/in/seungha-kim-142ba3228')}><LinkedInIcon /></li>
           </ul>
         </ContactNav>
 

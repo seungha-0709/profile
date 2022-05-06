@@ -1,4 +1,9 @@
 import styled from 'styled-components'
+import { useRouter } from "next/router"
+import GitHubIcon from '@mui/icons-material/GitHub';
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+
 
 
 const Container = styled.div`
@@ -64,17 +69,40 @@ const Side = styled.div`
     padding-bottom: 5px;
     border-bottom: 1px solid #fff;
     margin-bottom: 10px;
+    opacity: 0;
+    animation: 500ms ease-in forwards 0.4s introtop;
+    @keyframes introtop {
+      from {
+        opacity: 0;
+        transform: translateY(20px)
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
   }
 
   & > div:last-of-type {
     height: 50%;
-    /* background: #ccc; */
     display: flex;
     align-items: flex-start;
     border-top: 1px solid #D12386;
     padding-top: 5px;
     justify-content: flex-end;
     color: #D12386;
+    opacity: 0;
+    animation: 500ms ease-in forwards 0.6s introbottom;
+    @keyframes introbottom {
+      from {
+        opacity: 0;
+        transform: translateY(-20px)
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
   }
 `
 
@@ -156,10 +184,59 @@ const Subtitle = styled.h2`
   }
 `
 
+const ContactNav = styled.nav`
+  width: 100%;
+  height: 50px;
+  padding: 5px 10px;
+  background: #D12386;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  ul {
+    justify-self: center;
+    align-self: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 40px;
+    width: 100px;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    display: flex;
+    align-items: center;
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 20px;
+      margin: 0px;
+      padding: 0px;
+      width: 30px;
+      color: #fff;
+      height: 30px;
+      border-radius: 15px;
+      box-sizing:border-box ;
+      cursor: pointer;
+      &:hover {
+        border: 0;
+        background: #111;
+      }
+    }
+  }
+`
+
 const MainMobile = props => {
 
   return (
     <Container>
+      <ContactNav>
+        <ul>
+          <li onClick={() => router.push('https://github.com/seungha-0709')}><GitHubIcon /></li>
+          <li onClick={() => router.push('mailto:sh.kim.x928@gmail.com')}><AlternateEmailIcon /></li>
+          <li onClick={() => router.push('https://www.linkedin.com/in/seungha-kim-142ba3228')}><LinkedInIcon /></li>
+        </ul>
+      </ContactNav>
       <Top> <em>H</em>ello<em>.</em></Top>
       <Side>
         <div>
