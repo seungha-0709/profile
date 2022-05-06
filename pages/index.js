@@ -45,7 +45,7 @@ const Portfolio = props => {
         <meta property="og:title" content="Kim Seungha, Web Frontend Developer" key="title" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="/website.png" />
-        <meta property="og:description" content="im Seungha, Web Frontend Developer" />
+        <meta property="og:description" content="Kim Seungha, Web Frontend Developer" />
       </Head>
       <div ref={componentRef}>
         {viewport === 'desktop' && <Main />}
