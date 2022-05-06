@@ -795,7 +795,7 @@ const Main = props => {
         {section === 1 && (
           <Qualification section={section}>
             <ul>
-              <li>Strong work principle and integrity with the development in ERP, accounting, and finance-related areas that deal with specific amounts, believe that accuracy and meticulousness in development are absolutely essential to secure users' trust and improve the quality-of-service experience.</li>
+              <li>Strong work principle and integrity with the development in ERP, accounting, and finance-related areas that deal with specific amounts, believe that accuracy and meticulousness in development are absolutely essential to secure users&apos; trust and improve the quality-of-service experience.</li>
               <li>Continual studies and self-development expected to gain deep knowledge about the web, covering both client/backend.</li>
             </ul>
           </Qualification>
@@ -827,7 +827,7 @@ const Main = props => {
             <li>Identified and resolved bugs and other issues related to frontend, May 2021 - Aug. 2021</li>
             <ol>
               <li>In pop-up and modal-centric services where data is updated through MobX, resolved the issue where updated is not reflected to other modals.  </li>
-              <li>Limited the draggable area of pop-ups and modals inside the browser (customizing the react-draggable library) to prevent the problem of pop-ups and modals disappearing from the screen due to a user's mistake in dragging. </li>
+              <li>Limited the draggable area of pop-ups and modals inside the browser (customizing the react-draggable library) to prevent the problem of pop-ups and modals disappearing from the screen due to a user&apos;s mistake in dragging. </li>
               <li>Added and modified VAT automatic calculation function when entering purchase and sales numbers into a ledger. </li>
               <li>All other bugs related to the screen are resolved before the opening of the actual service, including input activation/disabling, CSS, and design modification under certain conditions. </li>
               <li>Removed anti-patterns and modified legacy code, such as unnecessary status values unrelated to rendering or managing props as status values from subcomponents and changed existing HOC-based React code to Hook-based. </li>
