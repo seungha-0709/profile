@@ -3,7 +3,6 @@ import { useState, useEffect, useRef, useLayoutEffect } from 'react'
 import Head from 'next/head'
 import Main from "../components/portfolio/Main";
 import MainMobile from '../components/portfolio/MainMobile'
-import MainKorean from '../components/portfolio/MainKorean'
 
 
 const Portfolio = props => {
@@ -58,9 +57,9 @@ const Portfolio = props => {
         /> */}
       </Head>
       <div ref={componentRef}>
-        {/* {viewport === 'desktop' && <Main />}
-        {viewport === 'mobile' && <MainMobile />} */}
-        <MainKorean />
+        {viewport === 'desktop' && <Main />}
+        {viewport === 'mobile' && <MainMobile />}
+
       </div>
     </>
   )
