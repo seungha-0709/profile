@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 import GitHubIcon from '@mui/icons-material/GitHub';
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
@@ -148,26 +149,58 @@ const Div2 = styled.div`
   }
 `
 
+const Div = styled.div`
+  padding: 40px 20px 20px 20px;
+  width: 100%;
+  letter-spacing: 0.1rem;
+  font-weight: 300;
+  margin: 0;
+`
+
 const Section = styled.section`
   padding: 40px 20px 20px 20px;
   width: 100%;
   letter-spacing: 0.1rem;
   font-weight: 300;
   margin: 0;
+  p {
+    opacity: 0;
+  }
+  h2 {
+    opacity: 0;
+  }
   h3 {
     font-size: 1.2rem;
     font-weight: 500;
     margin: 10px 0;
+    opacity: 0;
   }
   ul {
     padding-left: 20px;
+    opacity: 0;
   }
   ol {
     padding-left: 20px;
     list-style: circle;
+    opacity: 0;
   }
   li { 
     margin-bottom: 10px;
+  }
+  &.scroll {
+    & > h2, h3, p, ul, ol, img {
+      animation: 500ms ease-in forwards 0.4s scrollUp;
+      @keyframes scrollUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px)
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0)
+        }
+      }
+    }
   }
 `
 
@@ -228,6 +261,24 @@ const ContactNav = styled.nav`
 
 const MainMobile = props => {
 
+  const [isScrollUp, setIsScrollUp] = useState(null)
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section")
+
+    const scrollUp = () => {
+      for (const el of sections) {
+        if (!el.classList.contains('scroll')) {
+          if (window.innerHeight > el.getBoundingClientRect().top) {
+            el.classList.add('scroll');
+          }
+        }
+      }
+    }
+
+    document.addEventListener('scroll', scrollUp)
+  })
+
   return (
     <Container>
       <ContactNav>
@@ -244,9 +295,9 @@ const MainMobile = props => {
         <div>frontend developer</div>
       </Side>
 
-      <Section>
+      <Div>
         <h2>Kim Seungha.</h2>
-      </Section>
+      </Div>
       <Div1>
         An analytical, innovative, experienced web frontend developer with excellent knowledge of web application development concepts with the ability to work collaboratively with IT and non-technical members of the development team.
       </Div1>
@@ -256,7 +307,7 @@ const MainMobile = props => {
         <p>Continual studies and self-development expected to gain deep knowledge about the web, covering both client/backend.</p>
       </Div2>
 
-      <Section style={{ background: '#D12386' }}>
+      <Section id="tech-skill" style={{ background: '#D12386' }}>
         <Subtitle><span style={{ color: '#fff' }}>Technical</span> <span style={{ color: '#111' }}>Skill</span></Subtitle>
         <p style={{ fontWeight: 500 }}>HTML5, CSS3, JavaScript, SCSS, <br />
           React, Vue.js, Next.js, Recoil, MobX, <br />
@@ -317,8 +368,9 @@ const MainMobile = props => {
 
       <Section>
         <Subtitle>Education</Subtitle>
-        Ewha Womans University	<br /><span style={{ textAlign: 'right' }}>Mar. 2009 - Feb. 2014</span><br />
-        Majored in Education. Minored in Business Administration. GPA: 4.13/4.50
+        <p>Ewha Womans University	<br /><span style={{ textAlign: 'right' }}>Mar. 2009 - Feb. 2014</span><br />
+          Majored in Education. Minored in Business Administration. GPA: 4.13/4.50
+        </p>
       </Section>
 
     </Container>
