@@ -286,6 +286,9 @@ const Experience = props => {
             <TechSpan>RethinkDB(NoSQL)</TechSpan>
             <TechSpan>Figma</TechSpan>
             <TechSpan>Storybook</TechSpan>
+            <TechSpan>Styled-component</TechSpan>
+            <TechSpan>Emotion</TechSpan>
+            <TechSpan>Jest</TechSpan>
             <Miscellaneous>(그 외 다수의 리액트 라이브러리 커스터마이징 경험 보유)</Miscellaneous>
           </div>
         </AsideDiv>

@@ -311,7 +311,8 @@ const MainMobile = props => {
         <Subtitle><span style={{ color: '#fff' }}>Technical</span> <span style={{ color: '#111' }}>Skill</span></Subtitle>
         <p style={{ fontWeight: 500 }}>HTML5, CSS3, JavaScript, SCSS, <br />
           React, Vue.js, Next.js, Recoil, MobX, <br />
-          GraphQL(Apollo-client), RethinkDB(NoSQL), Figma, Storybook</p>
+          GraphQL(Apollo-client), RethinkDB(NoSQL), Figma, Storybook<br />
+          Styled-component, Emotion, Jest</p>
       </Section>
 
       <Section>

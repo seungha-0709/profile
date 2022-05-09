@@ -604,7 +604,7 @@ const SubTitle3 = styled.h2.attrs(props => ({
   grid-column: 2 / span 10;
   grid-row: 2 / span 1;
   color: #fff;
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 700;
   margin: 0;
   line-height: 3rem;
@@ -795,6 +795,7 @@ const Main = props => {
         <Hello section={section}><em>H</em>ello<em>.</em></Hello>
         <HelloIntro section={section}>
           I am Kim Seungha.
+          <Button style={{ width: 250, marginTop: 30 }} onClick={() => router.push('/resume')}>Resume Korean Ver.</Button>
         </HelloIntro>
         <Objective section={section}>
           An analytical, innovative, experienced web frontend developer with excellent knowledge of web application development concepts with the ability to work collaboratively with IT and non-technical members of the development team.
@@ -812,7 +813,7 @@ const Main = props => {
         )}
         {section === 1 && <SubTitle1 section={section}><em>Technical</em> Skill</SubTitle1>}
         {section === 1 && <TechSkill section={section}>
-          HTML5, CSS3, JavaScript, SCSS, React, Vue.js, Next.js, Recoil, MobX, GraphQL(Apollo-client), RethinkDB(NoSQL), Figma, Storybook
+          HTML5, CSS3, JavaScript, SCSS, React, Vue.js, Next.js, Recoil, MobX, GraphQL(Apollo-client), RethinkDB(NoSQL), Figma, Storybook, Styled-component, Emotion, Jest
         </TechSkill>}
         {section === 1 && <SubTitle1 style={{ gridRow: '5 / span 1' }} section={section}>Professional <em>Experience</em></SubTitle1>}
         {section === 1 && <TechSkill style={{ gridRow: '6 / span 3' }} section={section}>
