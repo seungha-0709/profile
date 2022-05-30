@@ -225,7 +225,7 @@ const Experience = props => {
                 <li>
                   각 계정과목과 계정 그룹의 순서를 마우스 드래그 앤 드롭으로 자유롭게 배열할 수 있도록 구현
                 </li>
-                <li><Link href="https://develop-dash-ui-by-vendor.dev.erpper.io/management/account">데모 버전 확인 	&#128279;</Link></li>
+                <li><Link href="https://www.erpper.com/">데모 버전 확인 	&#128279;</Link></li>
               </ul>
             </li>
             <li><p>전자세금계산서, 전자계산서 자동전표처리 서비스 화면 개발 <span>2021. 2.</span></p></li>
